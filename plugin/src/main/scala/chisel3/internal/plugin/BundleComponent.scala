@@ -251,6 +251,7 @@ private[plugin] class BundleComponent(val global: Global, arguments: ChiselPlugi
 
         // ==================== Generate _usingPlugin ====================
         val usingPluginOpt = if (isBundle) {
+          println("!!!!!!!!!!!!!!!!!!!!!!!!!!!PLUGIN!!!!!!!!!!!!!!!!!!!!!!!!!!!")
           // Unclear why quasiquotes work here but didn't for cloneTypeSym, maybe they could.
           Some(localTyper.typed(q"override protected def _usingPlugin: Boolean = true"))
         } else {
